@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Separation.DataSource;
+using Separation.Models;
 using Separation.POCO;
 using Separation.Services;
 
@@ -16,11 +17,9 @@ namespace Separation.ServiceValues {
                     SpecificationURL = "{0}#!/HistoricalAirApi/HistoricalAirApi_Airport",
                     URL = "{0}/v2/Air/Historical/FIDS/Airport",
                     EnumID = 2400
-                }, Details = new [] {
-                    new BaseServiceDetail {
-                        ID = "HistoricalAviation_02001",
-                        FK_BaseAuthority = BaseAuthority.交通部民用航空局
-                    }
+                }, Detail = new BaseServiceDetail {
+                    ID = "HistoricalAviation_02001",
+                    FK_BaseAuthority = BaseAuthority.交通部民用航空局
                 }
             };
             yield return new ServiceData {
@@ -31,11 +30,9 @@ namespace Separation.ServiceValues {
                     SpecificationURL = "{0}#!/HistoricalAirApi/HistoricalAirApi_Flight",
                     URL = "{0}/v2/Air/Historical/FIDS/Flight",
                     EnumID = 2401
-                }, Details = new [] {
-                    new BaseServiceDetail {
-                        ID = "HistoricalAviation_02002",
-                        FK_BaseAuthority = BaseAuthority.交通部民用航空局
-                    }
+                }, Detail = new BaseServiceDetail {
+                    ID = "HistoricalAviation_02002",
+                    FK_BaseAuthority = BaseAuthority.交通部民用航空局
                 }
             };
             yield return new ServiceData {
@@ -51,8 +48,7 @@ namespace Separation.ServiceValues {
                     FK_BaseAuthority = c.FK_BaseAuthority,
                     Parameter = c.NameEn,
                     ParamDescription = c.Name,
-                    NameZh_tw = $"{c.Name}公車動態定時歷史檔案清單(A1)"
-                }).ToArray()
+                })
             };
             yield return new ServiceData {
                 Service = new BaseService {
@@ -67,8 +63,7 @@ namespace Separation.ServiceValues {
                     FK_BaseAuthority = c.FK_BaseAuthority,
                     Parameter = c.NameEn,
                     ParamDescription = c.Name,
-                    NameZh_tw = $"{c.Name}公車動態定點歷史檔案清單(A2)"
-                }).ToArray()
+                })
             };
             yield return new ServiceData {
                 Service = new BaseService {
@@ -78,11 +73,9 @@ namespace Separation.ServiceValues {
                     SpecificationURL = "{0}#!/HistoricalInterCityBusApi/HistoricalInterCityBusApi_RealTimeByFrequency",
                     URL = "{0}/v2/Bus/Historical/RealTimeByFrequency/InterCity",
                     EnumID = 2404
-                }, Details = new [] {
-                    new BaseServiceDetail {
-                        ID = "HistoricalInterCityBus_02001",
-                        FK_BaseAuthority = BaseAuthority.交通部公路總局
-                    }
+                }, Detail = new BaseServiceDetail {
+                    ID = "HistoricalInterCityBus_02001",
+                    FK_BaseAuthority = BaseAuthority.交通部公路總局
                 }
             };
             yield return new ServiceData {
@@ -93,11 +86,9 @@ namespace Separation.ServiceValues {
                     SpecificationURL = "{0}#!/HistoricalInterCityBusApi/HistoricalInterCityBusApi_RealTimeNearStop",
                     URL = "{0}/v2/Bus/Historical/RealTimeNearStop/InterCity",
                     EnumID = 2405
-                }, Details = new [] {
-                    new BaseServiceDetail {
-                        ID = "HistoricalInterCityBus_02002",
-                        FK_BaseAuthority = BaseAuthority.交通部公路總局
-                    }
+                }, Detail = new BaseServiceDetail {
+                    ID = "HistoricalInterCityBus_02002",
+                    FK_BaseAuthority = BaseAuthority.交通部公路總局
                 }
             };
             yield return new ServiceData {
@@ -109,11 +100,9 @@ namespace Separation.ServiceValues {
                     SpecificationURL = "{0}#!/HistoricalTHSRApi/HistoricalTHSRApi_AlertInfo",
                     URL = "{0}/v2/Rail/Historical/THSR/AlertInfo",
                     EnumID = 2406
-                }, Details = new [] {
-                    new BaseServiceDetail {
-                        ID = "HistoricalTHSR_02001",
-                        FK_BaseAuthority = BaseAuthority.臺灣高速鐵路股份有限公司
-                    }
+                }, Detail = new BaseServiceDetail {
+                    ID = "HistoricalTHSR_02001",
+                    FK_BaseAuthority = BaseAuthority.臺灣高速鐵路股份有限公司
                 }
             };
             yield return new ServiceData {
@@ -125,11 +114,9 @@ namespace Separation.ServiceValues {
                     SpecificationURL = "{0}#!/HistoricalTHSRApi/HistoricalTHSRApi_AvailableSeatStatusList",
                     URL = "{0}/v2/Rail/Historical/THSR/AvailableSeatStatusList",
                     EnumID = 2407
-                }, Details = new [] {
-                    new BaseServiceDetail {
-                        ID = "HistoricalTHSR_02002",
-                        FK_BaseAuthority = BaseAuthority.臺灣高速鐵路股份有限公司
-                    }
+                }, Detail = new BaseServiceDetail {
+                    ID = "HistoricalTHSR_02002",
+                    FK_BaseAuthority = BaseAuthority.臺灣高速鐵路股份有限公司
                 }
             };
             yield return new ServiceData {
@@ -141,11 +128,9 @@ namespace Separation.ServiceValues {
                     SpecificationURL = "{0}#!/HistoricalTRAApi/HistoricalTRAApi_LiveBoard",
                     URL = "{0}/v2/Rail/Historical/TRA/LiveBoard",
                     EnumID = 2408
-                }, Details = new [] {
-                    new BaseServiceDetail {
-                        ID = "HistoricalTRA_02001",
-                        FK_BaseAuthority = BaseAuthority.交通部臺灣鐵路管理局
-                    }
+                }, Detail = new BaseServiceDetail {
+                    ID = "HistoricalTRA_02001",
+                    FK_BaseAuthority = BaseAuthority.交通部臺灣鐵路管理局
                 }
             };
             yield return new ServiceData {
@@ -157,11 +142,9 @@ namespace Separation.ServiceValues {
                     SpecificationURL = "{0}#!/HistoricalTRAApi/HistoricalTRAApi_LiveTrainDelay",
                     URL = "{0}/v2/Rail/Historical/TRA/LiveTrainDelay",
                     EnumID = 2409
-                }, Details = new [] {
-                    new BaseServiceDetail {
-                        ID = "HistoricalTRA_02002",
-                        FK_BaseAuthority = BaseAuthority.交通部臺灣鐵路管理局
-                    }
+                }, Detail = new BaseServiceDetail {
+                    ID = "HistoricalTRA_02002",
+                    FK_BaseAuthority = BaseAuthority.交通部臺灣鐵路管理局
                 }
             };
         }
@@ -179,7 +162,7 @@ namespace Separation.ServiceValues {
                 foreach (var d in item.Details) {
                     d.PK_BaseServiceDetail = Guid.NewGuid();
                     d.FK_BaseService = item.Service.PK_BaseService;
-                    d.NameZh_tw = d.NameZh_tw ?? item.Service.NameZh_tw;
+                    d.NameZh_tw = d.NameZh_tw ?? $"{d.ParamDescription}{item.Service.NameZh_tw}";
                     d.DataUpdateInterval = -1;
                     d.PublishTime = Time.Execution;
                     d.UpdateTime = Time.Execution;
@@ -191,10 +174,5 @@ namespace Separation.ServiceValues {
                 yield return string.Empty;
             }
         }
-    }
-
-    public class ServiceData {
-        public BaseService Service;
-        public BaseServiceDetail[] Details;
     }
 }
