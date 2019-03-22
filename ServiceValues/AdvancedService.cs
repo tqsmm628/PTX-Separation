@@ -619,7 +619,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_Route",
-                    URL = "{0}/v2/Bus/Route/City/InterCity",
+                    URL = "{0}/v2/Bus/Route/InterCity",
                     EnumID = 2771
                 }, Detail = GetDetailFromTHB()
             };
@@ -658,12 +658,12 @@ namespace Separation.ServiceValues {
             };
             yield return new ServiceData {
                 Service = new BaseService {
-                    FK_BaseDataType = BaseDataType.Fare,
-                    NameZh_tw = "特定站位的公路客運路線票價資料",
+                    FK_BaseDataType = BaseDataType.Shape,
+                    NameZh_tw = "特定站位的公路客運線型資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_Shape",
-                    URL = "{0}/v2/Bus/RouteFare/InterCity",
+                    URL = "{0}/v2/Bus/Shape/InterCity",
                     EnumID = 2775
                 }, Detail = GetDetailFromTHB()
             };
@@ -691,7 +691,7 @@ namespace Separation.ServiceValues {
                     yield return SqlSL.Insert("BaseServiceDetail", d);
                 }
 
-                // yield return string.Empty;
+                yield return string.Empty;
             }
         }
     }
