@@ -8,7 +8,7 @@ using Separation.ServiceValues;
 namespace Separation {
     class Program {
         static void Main(string[] args) {
-            Dump("insert", ApplicationService.Insert());
+            Dump("insert", HistoricalService.Insert());
         }
 
         private static void Dump(string filename, IEnumerable<string> msg) => File.WriteAllText(

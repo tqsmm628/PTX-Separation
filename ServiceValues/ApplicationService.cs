@@ -22,6 +22,14 @@ namespace Separation.ServiceValues {
         private static BaseServiceDetail GetDetail_Weather() => GetDetail(WeatherId(), BaseAuthority.交通部中央氣象局);
         private static BaseServiceDetail GetDetail_Tourism() => GetDetail(TourismId(), BaseAuthority.交通部觀光局);
         private static BaseServiceDetail GetDetail_TaiwanTripBus() => GetDetail(TaiwanTripBusId(), BaseAuthority.交通部觀光局);
+        private static IEnumerable<BaseServiceDetail> GetDetails_Tourism(string appendName)
+            => BaseCity.GetCities().Select(c => new BaseServiceDetail {
+                ID = TourismId(),
+                FK_BaseAuthority = BaseAuthority.交通部觀光局,
+                Parameter = c.NameEn,
+                ParamDescription = c.Name,
+                NameZh_tw = $"{c.Name}{appendName}"
+            });
         #endregion
 
         private static IEnumerable<ServiceData> GenerateData() {
@@ -141,13 +149,33 @@ namespace Separation.ServiceValues {
             };
             yield return new ServiceData {
                 Service = new BaseService {
+                    NameZh_tw = "指定縣市觀光景點資料服務",
+                    FK_BaseCategory = BaseCategory.Travel,
+                    FK_BaseSubCategory = BaseSubCategory.Tourism,
+                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_ScenicSpot_0",
+                    URL = "{0}/v2/Tourism/ScenicSpot/{1}",
+                    EnumID = 2241
+                }, Details = GetDetails_Tourism("觀光景點資料服務")
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
                     NameZh_tw = "觀光餐飲資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
                     SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Restaurant",
                     URL = "{0}/v2/Tourism/Restaurant",
-                    EnumID = 2241
+                    EnumID = 2242
                 }, Detail = GetDetail_Tourism()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    NameZh_tw = "觀光餐飲資料服務",
+                    FK_BaseCategory = BaseCategory.Travel,
+                    FK_BaseSubCategory = BaseSubCategory.Tourism,
+                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Restaurant_0",
+                    URL = "{0}/v2/Tourism/Restaurant/{1}",
+                    EnumID = 2243
+                }, Details = GetDetails_Tourism("觀光餐飲資料服務")
             };
             yield return new ServiceData {
                 Service = new BaseService {
@@ -156,8 +184,18 @@ namespace Separation.ServiceValues {
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
                     SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Hotel",
                     URL = "{0}/v2/Tourism/Hotel",
-                    EnumID = 2242
+                    EnumID = 2244
                 }, Detail = GetDetail_Tourism()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    NameZh_tw = "觀光旅宿資料服務",
+                    FK_BaseCategory = BaseCategory.Travel,
+                    FK_BaseSubCategory = BaseSubCategory.Tourism,
+                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Hotel_0",
+                    URL = "{0}/v2/Tourism/Hotel/{1}",
+                    EnumID = 2245
+                }, Details = GetDetails_Tourism("觀光旅宿資料服務")
             };
             yield return new ServiceData {
                 Service = new BaseService {
@@ -166,8 +204,18 @@ namespace Separation.ServiceValues {
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
                     SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Activity",
                     URL = "{0}/v2/Tourism/Activity",
-                    EnumID = 2243
+                    EnumID = 2246
                 }, Detail = GetDetail_Tourism()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    NameZh_tw = "觀光活動資料服務",
+                    FK_BaseCategory = BaseCategory.Travel,
+                    FK_BaseSubCategory = BaseSubCategory.Tourism,
+                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Activity_0",
+                    URL = "{0}/v2/Tourism/Activity/{1}",
+                    EnumID = 2247
+                }, Details = GetDetails_Tourism("觀光活動資料服務")
             };
             #endregion
             #region TaiwanTripBus 2260~2289
@@ -253,8 +301,20 @@ namespace Separation.ServiceValues {
             };
             yield return new ServiceData {
                 Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.S2TravelTime,
+                    NameZh_tw = "臺灣好行路線站間旅行時間資料",
+                    FK_BaseCategory = BaseCategory.Travel,
+                    FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
+                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_S2TravelTime",
+                    URL = "{0}/v2/Bus/S2TravelTime/TaiwanTrip",
+                    EnumID = 2267
+                }, Detail = GetDetail_TaiwanTripBus()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
                     FK_BaseDataType = BaseDataType.News,
                     NameZh_tw = "臺灣好行最新消息資料",
+                    IsLiveData = true,
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
                     SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_News",

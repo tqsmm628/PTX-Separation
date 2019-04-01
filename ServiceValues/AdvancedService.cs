@@ -688,6 +688,24 @@ namespace Separation.ServiceValues {
                     d.UpdateTime = Time.Execution;
                     d.SpecPublishStatus = true;
                     d.APIPublishStatus = 1;
+                    switch (item.Service.EnumID) {
+                        case 2705: 
+                        case 2720: case 2721: case 2722: case 2723: 
+                        case 2724: case 2725: case 2726: case 2727:
+                        {
+                            if (!new [] {"Taoyuan", "Taichung", "Tainan", "Keelung", "KinmenCounty", "LienchiangCounty"}.Contains(d.Parameter)) {
+                                d.SpecPublishStatus = false;
+                                d.APIPublishStatus = 0;
+                            }
+
+                            break;
+                        }
+                        case 2707 when new [] {"Taoyuan", "Taichung", "Kaohsiung"}.Contains(d.Parameter):{
+                            d.SpecPublishStatus = false;
+                            d.APIPublishStatus = 0;
+                            break;
+                        }
+                    }
                     yield return SqlSL.Insert("BaseServiceDetail", d);
                 }
 
