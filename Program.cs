@@ -7,7 +7,7 @@ namespace Separation
 {
     class Program {
         static void Main(string[] args) {
-            Dump("insert", TRADataVersionService.Insert());
+            Dump("insert", HistoricalService.Insert());
         }
 
         private static void Dump(string filename, IEnumerable<string> msg) => File.WriteAllText(

@@ -69,7 +69,8 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Air,
 					SwaggerOperationID = "HistoricalAirApi_Airport",
 					URL = "v{Version}/Historical/Air/FIDS/Airport",
-                    EnumID = 2400
+                    EnumID = 2400,
+                    IsLiveData = true
                 }, Detail = GetDetail_Air()
             };
             yield return new ServiceData {
@@ -79,7 +80,8 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Air,
 					SwaggerOperationID = "HistoricalAirApi_Flight",
 					URL = "v{Version}/Historical/Air/FIDS/Flight",
-                    EnumID = 2401
+                    EnumID = 2401,
+                    IsLiveData = true
                 }, Detail = GetDetail_Air()
             };
             yield return new ServiceData {
@@ -91,7 +93,8 @@ namespace Separation.ServiceValues {
 					SwaggerOperationID = "HistoricalCityBusApi_RealTimeByFrequency",
                     ParamName = "City",
 					URL = "v{Version}/Historical/Bus/RealTimeByFrequency/City/{City}",
-                    EnumID = 2402
+                    EnumID = 2402,
+                    IsLiveData = true
                 }, Details = GetDetails_CityBus()
             };
             yield return new ServiceData {
@@ -103,7 +106,8 @@ namespace Separation.ServiceValues {
 					SwaggerOperationID = "HistoricalCityBusApi_RealTimeNearStop",
                     ParamName = "City",
 					URL = "v{Version}/Historical/Bus/RealTimeNearStop/City/{City}",
-                    EnumID = 2403
+                    EnumID = 2403,
+                    IsLiveData = true
                 }, Details = GetDetails_CityBus()
             };
             yield return new ServiceData {
@@ -114,7 +118,8 @@ namespace Separation.ServiceValues {
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
 					SwaggerOperationID = "HistoricalInterCityBusApi_RealTimeByFrequency",
 					URL = "v{Version}/Historical/Bus/RealTimeByFrequency/InterCity",
-                    EnumID = 2404
+                    EnumID = 2404,
+                    IsLiveData = true
                 }, Detail = GetDetail_InterCityBus()
             };
             yield return new ServiceData {
@@ -125,7 +130,8 @@ namespace Separation.ServiceValues {
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
 					SwaggerOperationID = "HistoricalInterCityBusApi_RealTimeNearStop",
 					URL = "v{Version}/Historical/Bus/RealTimeNearStop/InterCity",
-                    EnumID = 2405
+                    EnumID = 2405,
+                    IsLiveData = true
                 }, Detail = GetDetail_InterCityBus()
             };
             yield return new ServiceData {
@@ -136,7 +142,8 @@ namespace Separation.ServiceValues {
                     FK_BaseSubCategory = BaseSubCategory.THSR,
 					SwaggerOperationID = "HistoricalTHSRApi_AlertInfo",
 					URL = "v{Version}/Historical/Rail/THSR/AlertInfo",
-                    EnumID = 2406
+                    EnumID = 2406,
+                    IsLiveData = true
                 }, Detail = GetDetail_THSR()
             };
             yield return new ServiceData {
@@ -147,7 +154,8 @@ namespace Separation.ServiceValues {
                     FK_BaseSubCategory = BaseSubCategory.THSR,
 					SwaggerOperationID = "HistoricalTHSRApi_AvailableSeatStatusList",
 					URL = "v{Version}/Historical/Rail/THSR/AvailableSeatStatusList",
-                    EnumID = 2407
+                    EnumID = 2407,
+                    IsLiveData = true
                 }, Detail = GetDetail_THSR()
             };
             yield return new ServiceData {
@@ -158,7 +166,8 @@ namespace Separation.ServiceValues {
                     FK_BaseSubCategory = BaseSubCategory.TRA,
 					SwaggerOperationID = "HistoricalTRAApi_LiveBoard",
 					URL = "v{Version}/Historical/Rail/TRA/LiveBoard",
-                    EnumID = 2408
+                    EnumID = 2408,
+                    IsLiveData = true
                 }, Detail = GetDetail_TRA()
             };
             yield return new ServiceData {
@@ -169,7 +178,8 @@ namespace Separation.ServiceValues {
                     FK_BaseSubCategory = BaseSubCategory.TRA,
 					SwaggerOperationID = "HistoricalTRAApi_LiveTrainDelay",
 					URL = "v{Version}/Historical/Rail/TRA/LiveTrainDelay",
-                    EnumID = 2409
+                    EnumID = 2409,
+                    IsLiveData = true
                 }, Detail = GetDetail_TRA()
             };
             yield return new ServiceData {
@@ -449,13 +459,112 @@ namespace Separation.ServiceValues {
                     EnumID = 2433
                 }, Detail = GetDetail_InterCityBus()
             };
+
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "臺鐵定期資料版本資訊歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_GeneralDataVersion",
+					URL = "v{Version}/Historical/Rail/TRA/GeneralDataVersion/All",
+                    EnumID = 2434
+                }, Detail = GetDetail_TRA()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "臺鐵定期資料版本資訊歷史資料(月)",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_GeneralDataVersion_Month",
+					URL = "v{Version}/Historical/Rail/TRA/GeneralDataVersion/YearMonth/{YearMonth}",
+                    EnumID = 2435
+                }, Detail = GetDetail_TRA()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "臺鐵定期資料版本資訊歷史資料(日)",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_GeneralDataVersion_Date",
+					URL = "v{Version}/Historical/Rail/TRA/GeneralDataVersion/Date/{Date}",
+                    EnumID = 2436
+                }, Detail = GetDetail_TRA()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "臺鐵票價資料版本資訊歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_ODFareDataVersion",
+					URL = "v{Version}/Historical/Rail/TRA/ODFareDataVersion/All",
+                    EnumID = 2437
+                }, Detail = GetDetail_TRA()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "臺鐵票價資料版本資訊歷史資料(月)",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_ODFareDataVersion_Month",
+					URL = "v{Version}/Historical/Rail/TRA/ODFareDataVersion/YearMonth/{YearMonth}",
+                    EnumID = 2438
+                }, Detail = GetDetail_TRA()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "臺鐵票價資料版本資訊歷史資料(日)",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_ODFareDataVersion_Date",
+					URL = "v{Version}/Historical/Rail/TRA/ODFareDataVersion/Date/{Date}",
+                    EnumID = 2439
+                }, Detail = GetDetail_TRA()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.Schedule,
+                    NameZh_tw = "臺鐵定期車次歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_GeneralTrainInfo",
+					URL = "v{Version}/Historical/Rail/TRA/GeneralTrainInfo/v{DataVersion}",
+                    EnumID = 2440
+                }, Detail = GetDetail_TRA()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.Schedule,
+                    NameZh_tw = "臺鐵定期時刻表歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_GeneralTimetable",
+					URL = "v{Version}/Historical/Rail/TRA/GeneralTimetable/v{DataVersion}",
+                    EnumID = 2441
+                }, Detail = GetDetail_TRA()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.Fare,
+                    NameZh_tw = "臺鐵票價歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.TRA,
+					SwaggerOperationID = "HistoricalTRAApi_ODFare",
+					URL = "v{Version}/Historical/Rail/TRA/ODFare/v{DataVersion}",
+                    EnumID = 2442
+                }, Detail = GetDetail_TRA()
+            };
             #endregion
         }
         public static IEnumerable<string> Insert() {
-            foreach (var item in GenerateData().ToList().Where(x => 2400 <= x.Service.EnumID && x.Service.EnumID <= 2449)) {
+            foreach (var item in GenerateData().ToList().Where(x => 2434 <= x.Service.EnumID && x.Service.EnumID <= 2442)) {
                 item.Service.PK_BaseService = Guid.NewGuid();
                 item.Service.Version = 2;
-                item.Service.IsLiveData = true;
                 item.Service.IsHistoricalData = true;
                 item.Service.SpecPublishStatus = true;
                 item.Service.APIPublishStatus = 1;
@@ -471,10 +580,6 @@ namespace Separation.ServiceValues {
                     d.UpdateTime = Time.Execution;
                     d.SpecPublishStatus = true;
                     d.APIPublishStatus = 1;
-                    // if (item.Service.EnumID == 2413 && !(d.Parameter == "Taipei" || d.Parameter == "NewTaipei")) {
-                    //     d.SpecPublishStatus = false;
-                    //     d.APIPublishStatus = 0;
-                    // }
                     yield return SqlSL.Insert("BaseServiceDetail", d);
                 }
 
