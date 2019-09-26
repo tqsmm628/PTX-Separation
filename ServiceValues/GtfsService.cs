@@ -40,8 +40,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "公車靜態GTFS資料轉製",
                     FK_BaseCategory = BaseCategory.GTFS,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=gtfs#!/GTFSBusApi/GTFSBusApi_Static",
-                    URL = "{0}/v2/Bus/GTFS/Static/File/City/{1}",
+					SwaggerOperationID = "GTFSBusApi_Static",
+					URL = "{0}/v2/Bus/GTFS/Static/File/City/{1}",
                     EnumID = 2370
                 }, Details = GetDetails_CityBus()
             };
@@ -50,8 +50,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "公車動態GTFS資料轉製",
                     FK_BaseCategory = BaseCategory.GTFS,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=gtfs#!/GTFSBusApi/GTFSBusApi_RealTime",
-                    URL = "{0}/v2/Bus/GTFS/RealTime/File/City/{1}",
+					SwaggerOperationID = "GTFSBusApi_RealTime",
+					URL = "{0}/v2/Bus/GTFS/RealTime/File/City/{1}",
                     EnumID = 2371
                 }, Details = GetDetails_CityBus()
             };
@@ -60,8 +60,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "高鐵靜態GTFS資料轉製",
                     FK_BaseCategory = BaseCategory.GTFS,
                     FK_BaseSubCategory = BaseSubCategory.THSR,
-                    SpecificationURL = "{0}?area=gtfs#!/GTFSTHSRApi/GTFSTHSRApi_Static",
-                    URL = "{0}/v2/THSR/GTFS/Static/File",
+					SwaggerOperationID = "GTFSTHSRApi_Static",
+					URL = "{0}/v2/THSR/GTFS/Static/File",
                     EnumID = 2372
                 }, Detail = GetDetail_THSR()
             };
@@ -70,8 +70,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "台鐵靜態GTFS資料轉製",
                     FK_BaseCategory = BaseCategory.GTFS,
                     FK_BaseSubCategory = BaseSubCategory.TRA,
-                    SpecificationURL = "{0}?area=gtfs#!/GTFSTRAApi/GTFSTRAApi_Static",
-                    URL = "{0}/v2/TRA/GTFS/Static/File",
+					SwaggerOperationID = "GTFSTRAApi_Static",
+					URL = "{0}/v2/TRA/GTFS/Static/File",
                     EnumID = 2374
                 }, Detail = GetDetail_TRA()
             };
@@ -80,8 +80,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "台鐵動態GTFS資料轉製",
                     FK_BaseCategory = BaseCategory.GTFS,
                     FK_BaseSubCategory = BaseSubCategory.TRA,
-                    SpecificationURL = "{0}?area=gtfs#!/GTFSTRAApi/GTFSTRAApi_RealTime",
-                    URL = "{0}/v2/TRA/GTFS/RealTime/File",
+					SwaggerOperationID = "GTFSTRAApi_RealTime",
+					URL = "{0}/v2/TRA/GTFS/RealTime/File",
                     EnumID = 2375
                 }, Detail = GetDetail_TRA()
             };

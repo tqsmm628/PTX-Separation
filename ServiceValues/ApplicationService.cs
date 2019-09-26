@@ -20,15 +20,30 @@ namespace Separation.ServiceValues {
         };
         private static BaseServiceDetail GetDetail_AirQuality() => GetDetail(AirQualityId(), BaseAuthority.行政院環境保護署);
         private static BaseServiceDetail GetDetail_Weather() => GetDetail(WeatherId(), BaseAuthority.交通部中央氣象局);
-        private static BaseServiceDetail GetDetail_Tourism() => GetDetail(TourismId(), BaseAuthority.交通部觀光局);
-        private static BaseServiceDetail GetDetail_TaiwanTripBus() => GetDetail(TaiwanTripBusId(), BaseAuthority.交通部觀光局);
+        private static BaseServiceDetail GetDetail_Tourism() 
+            => new BaseServiceDetail{
+                ID = TourismId(), 
+                FK_BaseAuthority = BaseAuthority.交通部觀光局,
+                SpecPublishStatus = true,
+                APIPublishStatus = 1
+            };
+        private static BaseServiceDetail GetDetail_TaiwanTripBus() 
+            => new BaseServiceDetail{
+                ID = TaiwanTripBusId(), 
+                FK_BaseAuthority = BaseAuthority.交通部觀光局,
+                SpecPublishStatus = true,
+                APIPublishStatus = 1
+            };
+
         private static IEnumerable<BaseServiceDetail> GetDetails_Tourism(string appendName)
             => BaseCity.GetCities().Select(c => new BaseServiceDetail {
                 ID = TourismId(),
                 FK_BaseAuthority = BaseAuthority.交通部觀光局,
                 Parameter = c.NameEn,
                 ParamDescription = c.Name,
-                NameZh_tw = $"{c.Name}{appendName}"
+                NameZh_tw = $"{c.Name}{appendName}",
+                SpecPublishStatus = true,
+                APIPublishStatus = 1
             });
         #endregion
 
@@ -40,7 +55,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.AirQuality,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/PsiInfoApi/PsiInfoApi_Air",
+                    SwaggerOperationID = "PsiInfoApi_Air",
                     URL = "{0}/v2/AirQuality/PsiInfo/Air/Airport",
                     EnumID = 2200
                 }, Detail = GetDetail_AirQuality()
@@ -51,7 +66,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.AirQuality,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/PsiInfoApi/PsiInfoApi_THSR",
+                    SwaggerOperationID = "PsiInfoApi_THSR",
                     URL = "{0}/v2/AirQuality/PsiInfo/Rail/THSR/Station",
                     EnumID = 2201
                 }, Detail = GetDetail_AirQuality()
@@ -62,7 +77,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.AirQuality,
                     IsLiveData = true,
-                    SpecificationURL = "{0}/v2/AirQuality/PsiInfo/Rail/TRA/Station",
+                    SwaggerOperationID = "PsiInfoApi_TRA",
                     URL = "{0}/v2/AirQuality/PsiInfo/Rail/TRA/Station",
                     EnumID = 2202
                 }, Detail = GetDetail_AirQuality()
@@ -75,7 +90,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.Weather,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/RainInfoApi/RainInfoApi_AirQPE",
+                    SwaggerOperationID = "RainInfoApi_AirQPE",
                     URL = "{0}/v2/Weather/RainInfo/QPE/Air/Airport",
                     EnumID = 2220
                 }, Detail = GetDetail_Weather()
@@ -86,7 +101,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.Weather,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/RainInfoApi/RainInfoApi_THSRQPE",
+                    SwaggerOperationID = "RainInfoApi_THSRQPE",
                     URL = "{0}/v2/Weather/RainInfo/QPE/Rail/THSR/Station",
                     EnumID = 2221
                 }, Detail = GetDetail_Weather()
@@ -97,7 +112,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.Weather,
                     IsLiveData = true,
-                    SpecificationURL = "{0}/v2/Weather/RainInfo/QPE/Rail/TRA/Station",
+                    SwaggerOperationID = "RainInfoApi_TRAQPE",
                     URL = "{0}/v2/Weather/RainInfo/QPE/Rail/TRA/Station",
                     EnumID = 2222
                 }, Detail = GetDetail_Weather()
@@ -108,7 +123,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.Weather,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/RainInfoApi/RainInfoApi_AirQPF",
+                    SwaggerOperationID = "RainInfoApi_AirQPF",
                     URL = "{0}/v2/Weather/RainInfo/QPF/Air/Airport",
                     EnumID = 2223
                 }, Detail = GetDetail_Weather()
@@ -119,7 +134,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.Weather,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/RainInfoApi/RainInfoApi_THSRQPF",
+                    SwaggerOperationID = "RainInfoApi_THSRQPF",
                     URL = "{0}/v2/Weather/RainInfo/QPF/Rail/THSR/Station",
                     EnumID = 2224
                 }, Detail = GetDetail_Weather()
@@ -130,7 +145,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Environment,
                     FK_BaseSubCategory = BaseSubCategory.Weather,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/RainInfoApi/RainInfoApi_TRAQPF",
+                    SwaggerOperationID = "RainInfoApi_TRAQPF",
                     URL = "{0}/v2/Weather/RainInfo/QPF/Rail/TRA/Station",
                     EnumID = 2225
                 }, Detail = GetDetail_Weather()
@@ -142,9 +157,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "觀光景點資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
-                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_ScenicSpot",
+                    SwaggerOperationID = "TourismApi_ScenicSpot",
                     URL = "{0}/v2/Tourism/ScenicSpot",
-                    EnumID = 2240
+                    EnumID = 2240,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_Tourism()
             };
             yield return new ServiceData {
@@ -152,9 +169,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "指定縣市觀光景點資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
-                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_ScenicSpot_0",
+                    SwaggerOperationID = "TourismApi_ScenicSpot_0",
                     URL = "{0}/v2/Tourism/ScenicSpot/{1}",
-                    EnumID = 2241
+                    EnumID = 2241,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Details = GetDetails_Tourism("觀光景點資料服務")
             };
             yield return new ServiceData {
@@ -162,9 +181,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "觀光餐飲資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
-                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Restaurant",
+                    SwaggerOperationID = "TourismApi_Restaurant",
                     URL = "{0}/v2/Tourism/Restaurant",
-                    EnumID = 2242
+                    EnumID = 2242,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_Tourism()
             };
             yield return new ServiceData {
@@ -172,9 +193,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "觀光餐飲資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
-                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Restaurant_0",
+                    SwaggerOperationID = "TourismApi_Restaurant_0",
                     URL = "{0}/v2/Tourism/Restaurant/{1}",
-                    EnumID = 2243
+                    EnumID = 2243,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Details = GetDetails_Tourism("觀光餐飲資料服務")
             };
             yield return new ServiceData {
@@ -182,9 +205,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "觀光旅宿資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
-                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Hotel",
+                    SwaggerOperationID = "TourismApi_Hotel",
                     URL = "{0}/v2/Tourism/Hotel",
-                    EnumID = 2244
+                    EnumID = 2244,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_Tourism()
             };
             yield return new ServiceData {
@@ -192,9 +217,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "觀光旅宿資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
-                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Hotel_0",
+                    SwaggerOperationID = "TourismApi_Hotel_0",
                     URL = "{0}/v2/Tourism/Hotel/{1}",
-                    EnumID = 2245
+                    EnumID = 2245,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Details = GetDetails_Tourism("觀光旅宿資料服務")
             };
             yield return new ServiceData {
@@ -202,9 +229,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "觀光活動資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
-                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Activity",
+                    SwaggerOperationID = "TourismApi_Activity",
                     URL = "{0}/v2/Tourism/Activity",
-                    EnumID = 2246
+                    EnumID = 2246,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_Tourism()
             };
             yield return new ServiceData {
@@ -212,9 +241,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "觀光活動資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.Tourism,
-                    SpecificationURL = "{0}?area=application#!/TourismApi/TourismApi_Activity_0",
+                    SwaggerOperationID = "TourismApi_Activity_0",
                     URL = "{0}/v2/Tourism/Activity/{1}",
-                    EnumID = 2247
+                    EnumID = 2247,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Details = GetDetails_Tourism("觀光活動資料服務")
             };
             #endregion
@@ -226,9 +257,11 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_RealTimeByFrequency",
-                    URL = "{0}/v2/Bus/RealTimeByFrequency/TaiwanTrip",
-                    EnumID = 2260
+                    SwaggerOperationID = "TaiwanTripBusApi_RealTimeByFrequency",
+                    URL = "{0}/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip",
+                    EnumID = 2260,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             yield return new ServiceData {
@@ -238,9 +271,11 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_RealTimeNearStop",
-                    URL = "{0}/v2/Bus/RealTimeNearStop/TaiwanTrip",
-                    EnumID = 2261
+                    SwaggerOperationID = "TaiwanTripBusApi_RealTimeNearStop",
+                    URL = "{0}/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip",
+                    EnumID = 2261,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             yield return new ServiceData {
@@ -250,9 +285,11 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_EstimatedTimeOfArrival",
-                    URL = "{0}/v2/Bus/EstimatedTimeOfArrival/TaiwanTrip",
-                    EnumID = 2262
+                    SwaggerOperationID = "TaiwanTripBusApi_EstimatedTimeOfArrival",
+                    URL = "{0}/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip",
+                    EnumID = 2262,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             yield return new ServiceData {
@@ -261,9 +298,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "臺灣好行公車路線資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_Route",
-                    URL = "{0}/v2/Bus/Route/TaiwanTrip",
-                    EnumID = 2263
+                    SwaggerOperationID = "TaiwanTripBusApi_Route",
+                    URL = "{0}/v2/Tourism/Bus/Route/TaiwanTrip",
+                    EnumID = 2263,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             yield return new ServiceData {
@@ -272,9 +311,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "臺灣好行公車路線資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_StopOfRoute",
-                    URL = "{0}/v2/Bus/StopOfRoute/TaiwanTrip",
-                    EnumID = 2264
+                    SwaggerOperationID = "TaiwanTripBusApi_StopOfRoute",
+                    URL = "{0}/v2/Tourism/Bus/StopOfRoute/TaiwanTrip",
+                    EnumID = 2264,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             yield return new ServiceData {
@@ -283,20 +324,24 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "臺灣好行公車路線班表資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_Schedule",
-                    URL = "{0}/v2/Bus/Schedule/TaiwanTrip",
-                    EnumID = 2265
+                    SwaggerOperationID = "TaiwanTripBusApi_Schedule",
+                    URL = "{0}/v2/Tourism/Bus/Schedule/TaiwanTrip",
+                    EnumID = 2265,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             yield return new ServiceData {
                 Service = new BaseService {
-                    FK_BaseDataType = BaseDataType.Shape,
+                    FK_BaseDataType = BaseDataType.Route,
                     NameZh_tw = "臺灣好行空間線型資料服務",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_Shape",
-                    URL = "{0}/v2/Bus/Shape/TaiwanTrip",
-                    EnumID = 2266
+                    SwaggerOperationID = "TaiwanTripBusApi_Shape",
+                    URL = "{0}/v2/Tourism/Bus/Shape/TaiwanTrip",
+                    EnumID = 2266,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             yield return new ServiceData {
@@ -305,9 +350,11 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "臺灣好行路線站間旅行時間資料",
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_S2TravelTime",
-                    URL = "{0}/v2/Bus/S2TravelTime/TaiwanTrip",
-                    EnumID = 2267
+                    SwaggerOperationID = "TaiwanTripBusApi_S2TravelTime",
+                    URL = "{0}/v2/Tourism/Bus/S2TravelTime/TaiwanTrip",
+                    EnumID = 2267,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             yield return new ServiceData {
@@ -317,9 +364,11 @@ namespace Separation.ServiceValues {
                     IsLiveData = true,
                     FK_BaseCategory = BaseCategory.Travel,
                     FK_BaseSubCategory = BaseSubCategory.TaiwanTripBus,
-                    SpecificationURL = "{0}?area=application#!/TaiwanTripBusApi/TaiwanTripBusApi_News",
-                    URL = "{0}/v2/Bus/News/TaiwanTrip",
-                    EnumID = 2268
+                    SwaggerOperationID = "TaiwanTripBusApi_News",
+                    URL = "{0}/v2/Tourism/Bus/News/TaiwanTrip",
+                    EnumID = 2268,
+                    SpecPublishStatus = true,
+                    APIPublishStatus = 1
                 }, Detail = GetDetail_TaiwanTripBus()
             };
             #endregion
@@ -329,8 +378,6 @@ namespace Separation.ServiceValues {
                 item.Service.PK_BaseService = Guid.NewGuid();
                 item.Service.Version = 2;
                 item.Service.URL_Web = item.Service.URL_Web ?? item.Service.URL;
-                item.Service.SpecPublishStatus = true;
-                item.Service.APIPublishStatus = 1;
                 yield return SqlSL.Insert("BaseService", item.Service);
 
                 foreach (var d in item.Details) {
@@ -340,8 +387,6 @@ namespace Separation.ServiceValues {
                     d.DataUpdateInterval = -1;
                     d.PublishTime = Time.Execution;
                     d.UpdateTime = Time.Execution;
-                    d.SpecPublishStatus = true;
-                    d.APIPublishStatus = 1;
                     yield return SqlSL.Insert("BaseServiceDetail", d);
                 }
 

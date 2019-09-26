@@ -34,8 +34,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車所有版本資訊",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_DataVersion",
-                    URL = "{0}/v2/Bus/DataVersion/tRecent/to/tLatest/City/{1}",
+					SwaggerOperationID = "RecentChangeCityBusApi_DataVersion", 
+					URL = "{0}/v2/Bus/DataVersion/tRecent/to/tLatest/City/{1}",
                     EnumID = 2800
                 }, Details = GetDetails_CityBus()
             };
@@ -44,8 +44,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車版本異動資訊",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_DiffLog",
-                    URL = "{0}/v2/Bus/Change/Compare/DiffLog",
+					SwaggerOperationID = "RecentChangeCityBusApi_DiffLog", 
+					URL = "{0}/v2/Bus/Change/Compare/DiffLog",
                     EnumID = 2801
                 }, Details = GetDetails_CityBus()
             };
@@ -54,8 +54,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車路線異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_Route",
-                    URL = "{0}/v2/Bus/Change/Compare/Route",
+					SwaggerOperationID = "RecentChangeCityBusApi_Route", 
+					URL = "{0}/v2/Bus/Change/Compare/Route",
                     EnumID = 2802
                 }, Details = GetDetails_CityBus()
             };
@@ -64,8 +64,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車站位異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_Station",
-                    URL = "{0}/v2/Bus/Change/Compare/Station",
+					SwaggerOperationID = "RecentChangeCityBusApi_Station", 
+					URL = "{0}/v2/Bus/Change/Compare/Station",
                     EnumID = 2803
                 }, Details = GetDetails_CityBus()
             };
@@ -74,8 +74,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車站牌異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_Stop",
-                    URL = "{0}/v2/Bus/Change/Compare/Stop",
+					SwaggerOperationID = "RecentChangeCityBusApi_Stop", 
+					URL = "{0}/v2/Bus/Change/Compare/Stop",
                     EnumID = 2804
                 }, Details = GetDetails_CityBus()
             };
@@ -84,8 +84,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車路線站序異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_StopOfRoute",
-                    URL = "{0}/v2/Bus/Change/Compare/StopOfRoute",
+					SwaggerOperationID = "RecentChangeCityBusApi_StopOfRoute", 
+					URL = "{0}/v2/Bus/Change/Compare/StopOfRoute",
                     EnumID = 2805
                 }, Details = GetDetails_CityBus()
             };
@@ -94,8 +94,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車顯示用路線站序異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_DisplayStopOfRoute",
-                    URL = "{0}/v2/Bus/Change/Compare/DisplayStopOfRoute",
+					SwaggerOperationID = "RecentChangeCityBusApi_DisplayStopOfRoute", 
+					URL = "{0}/v2/Bus/Change/Compare/DisplayStopOfRoute",
                     EnumID = 2806
                 }, Details = GetDetails_CityBus()
             };
@@ -104,8 +104,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車路線班表異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_Schedule",
-                    URL = "{0}/v2/Bus/Change/Compare/Schedule",
+					SwaggerOperationID = "RecentChangeCityBusApi_Schedule", 
+					URL = "{0}/v2/Bus/Change/Compare/Schedule",
                     EnumID = 2807
                 }, Details = GetDetails_CityBus()
             };
@@ -114,8 +114,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期市區公車線型異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeCityBusApi/RecentChangeCityBusApi_Shape",
-                    URL = "{0}/v2/Bus/Change/Compare/Shape",
+					SwaggerOperationID = "RecentChangeCityBusApi_Shape", 
+					URL = "{0}/v2/Bus/Change/Compare/Shape",
                     EnumID = 2808
                 }, Details = GetDetails_CityBus()
             };
@@ -127,8 +127,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期公路客運所有版本資訊",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeInterCityBusApi/RecentChangeInterCityBusApi_DataVersion",
-                    URL = "{0}/v2/Bus/DataVersion/tRecent/to/tLatest/InterCity",
+					SwaggerOperationID = "RecentChangeInterCityBusApi_DataVersion", 
+					URL = "{0}/v2/Bus/DataVersion/tRecent/to/tLatest/InterCity",
                     EnumID = 2820
                 }, Detail = GetDetail_InterCityBus()
             };
@@ -137,8 +137,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期公路客運版本異動資訊",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeInterCityBusApi/RecentChangeInterCityBusApi_DiffLog",
-                    URL = "{0}/v2/Bus/Change/Compare/DiffLog",
+					SwaggerOperationID = "RecentChangeInterCityBusApi_DiffLog", 
+					URL = "{0}/v2/Bus/Change/Compare/DiffLog",
                     EnumID = 2821
                 }, Detail = GetDetail_InterCityBus()
             };
@@ -147,8 +147,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期公路客運路線異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeInterCityBusApi/RecentChangeInterCityBusApi_Route",
-                    URL = "{0}/v2/Bus/Change/Compare/Route",
+					SwaggerOperationID = "RecentChangeInterCityBusApi_Route", 
+					URL = "{0}/v2/Bus/Change/Compare/Route",
                     EnumID = 2822
                 }, Detail = GetDetail_InterCityBus()
             };
@@ -157,8 +157,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期公路客運站牌異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeInterCityBusApi/RecentChangeInterCityBusApi_Stop",
-                    URL = "{0}/v2/Bus/Change/Compare/Stop",
+					SwaggerOperationID = "RecentChangeInterCityBusApi_Stop", 
+					URL = "{0}/v2/Bus/Change/Compare/Stop",
                     EnumID = 2823
                 }, Detail = GetDetail_InterCityBus()
             };
@@ -167,8 +167,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期公路客運路線站序異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeInterCityBusApi/RecentChangeInterCityBusApi_StopOfRoute",
-                    URL = "{0}/v2/Bus/Change/Compare/StopOfRoute",
+					SwaggerOperationID = "RecentChangeInterCityBusApi_StopOfRoute", 
+					URL = "{0}/v2/Bus/Change/Compare/StopOfRoute",
                     EnumID = 2824
                 }, Detail = GetDetail_InterCityBus()
             };
@@ -177,8 +177,8 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "近期公路客運路線班表異動資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}?area=change#!/RecentChangeInterCityBusApi/RecentChangeInterCityBusApi_Schedule",
-                    URL = "{0}/v2/Bus/Change/Compare/Schedule",
+					SwaggerOperationID = "RecentChangeInterCityBusApi_Schedule", 
+					URL = "{0}/v2/Bus/Change/Compare/Schedule",
                     EnumID = 2825
                 }, Detail = GetDetail_InterCityBus()
             };

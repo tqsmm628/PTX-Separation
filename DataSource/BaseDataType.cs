@@ -24,7 +24,14 @@ namespace Separation.DataSource {
         public static readonly Guid S2TravelTime = Guid.Parse("30dc3f47-b996-11e8-be8b-00155d63e605");
         public static readonly Guid AvailableSeatStatus = Guid.Parse("30dc3fd2-b996-11e8-be8b-00155d63e605");
         public static readonly Guid StoppingPattern = Guid.Parse("30dc405d-b996-11e8-be8b-00155d63e605");
-        public static readonly Guid Shape = Guid.Parse("30dc40da-b996-11e8-be8b-00155d63e605");
+        public static readonly Guid METAR = Guid.Parse("b87323d3-aeb9-11e9-93f4-005056c00001");
         public static readonly Guid LineNetwork = Guid.Parse("30dc4153-b996-11e8-be8b-00155d63e605");
+        public static readonly Guid Provider = Guid.Parse("c4e45ed5-aeb9-11e9-93f4-005056c00001");
+        public static readonly Guid Authority = Guid.Parse("c8dda2c3-aeb9-11e9-93f4-005056c00001");
+        public static readonly Guid DataVersion = Guid.Parse("ccfdc1c1-aeb9-11e9-93f4-005056c00001");
+        public static readonly Guid ScenicSpot = Guid.Parse("d1b0e07d-aeb9-11e9-93f4-005056c00001");
+        public static readonly Guid Repast = Guid.Parse("d6b7a7d6-aeb9-11e9-93f4-005056c00001");
+        public static readonly Guid Hotel = Guid.Parse("db82f4a3-aeb9-11e9-93f4-005056c00001");
+        public static readonly Guid Activity = Guid.Parse("e0a5f48b-aeb9-11e9-93f4-005056c00001");
     }
 }

@@ -9,7 +9,7 @@ namespace Separation.POCO {
         public Guid FK_BaseCategory;
         public Guid? FK_BaseSubCategory;
         public bool IsLiveData, IsHistoricalData;
-        public string SpecificationURL, URL, URL_Web;
+        public string SwaggerOperationID, ParamName, URL, URL_Web;
         public int EnumID;
         public bool SpecPublishStatus;
         public int APIPublishStatus;

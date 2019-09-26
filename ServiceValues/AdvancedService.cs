@@ -49,7 +49,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_RealTimeByFrequency",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_RealTimeByFrequency",
                     URL = "{0}/v2/Bus/RealTimeByFrequency/City/{1}",
                     EnumID = 2700
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -61,7 +61,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_RealTimeNearStop",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_RealTimeNearStop",
                     URL = "{0}/v2/Bus/RealTimeNearStop/City/{1}",
                     EnumID = 2701
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -73,7 +73,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_EstimatedTimeOfArrival",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_EstimatedTimeOfArrival",
                     URL = "{0}/v2/Bus/EstimatedTimeOfArrival/City/{1}",
                     EnumID = 2702
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -84,7 +84,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車路線資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Route",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Route",
                     URL = "{0}/v2/Bus/Route/City/{1}",
                     EnumID = 2703
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -95,7 +95,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車站牌資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Stop",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Stop",
                     URL = "{0}/v2/Bus/Stop/City/{1}",
                     EnumID = 2704
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -106,7 +106,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車站位資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Station",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Station",
                     URL = "{0}/v2/Bus/Station/City/{1}",
                     EnumID = 2705
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -117,7 +117,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車路線站序資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_StopOfRoute",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_StopOfRoute",
                     URL = "{0}/v2/Bus/StopOfRoute/City/{1}",
                     EnumID = 2706
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -128,18 +128,18 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車班表資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Schedule",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Schedule",
                     URL = "{0}/v2/Bus/Schedule/City/{1}",
                     EnumID = 2707
                 }, Details = GetDetailsFromCities(AdvCityBusId)
             };
             yield return new ServiceData {
                 Service = new BaseService {
-                    FK_BaseDataType = BaseDataType.Shape,
+                    FK_BaseDataType = BaseDataType.Route,
                     NameZh_tw = "特定業者的市區公車線型資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Shape",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Shape",
                     URL = "{0}/v2/Bus/Shape/City/{1}",
                     EnumID = 2708
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -150,7 +150,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車路線票價資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_RouteFare",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_RouteFare",
                     URL = "{0}/v2/Bus/RouteFare/City/{1}",
                     EnumID = 2709
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -164,7 +164,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_RealTimeByFrequency_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_RealTimeByFrequency_0",
                     URL = "{0}/v2/Bus/RealTimeByFrequency/City",
                     EnumID = 2710
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -176,7 +176,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_RealTimeNearStop_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_RealTimeNearStop_0",
                     URL = "{0}/v2/Bus/RealTimeNearStop/City",
                     EnumID = 2711
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -188,7 +188,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_EstimatedTimeOfArrival_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_EstimatedTimeOfArrival_0",
                     URL = "{0}/v2/Bus/EstimatedTimeOfArrival/City",
                     EnumID = 2712
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -199,7 +199,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的全台市區公車路線資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Route_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Route_0",
                     URL = "{0}/v2/Bus/Route/City",
                     EnumID = 2713
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -210,7 +210,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的全台市區公車站牌資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Stop_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Stop_0",
                     URL = "{0}/v2/Bus/Stop/City",
                     EnumID = 2714
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -221,7 +221,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的全台市區公車站位資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Station_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Station_0",
                     URL = "{0}/v2/Bus/Station/City",
                     EnumID = 2715
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -232,7 +232,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的全台市區公車路線站序資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_StopOfRoute_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_StopOfRoute_0",
                     URL = "{0}/v2/Bus/StopOfRoute/City",
                     EnumID = 2716
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -243,18 +243,18 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的全台市區公車班表資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Schedule_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Schedule_0",
                     URL = "{0}/v2/Bus/Schedule/City",
                     EnumID = 2717
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
             };
             yield return new ServiceData {
                 Service = new BaseService {
-                    FK_BaseDataType = BaseDataType.Shape,
+                    FK_BaseDataType = BaseDataType.Route,
                     NameZh_tw = "特定業者的全台市區公車線型資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_Shape_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_Shape_0",
                     URL = "{0}/v2/Bus/Shape/City",
                     EnumID = 2718
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -265,7 +265,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的全台市區公車路線票價資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95ByOperatorName/CityBusApi_ByOperatorName_RouteFare_0",
+                    SwaggerOperationID = "CityBusApi_ByOperatorName_RouteFare_0",
                     URL = "{0}/v2/Bus/RouteFare/City",
                     EnumID = 2719
                 }, Detail = GetDetailFromMOTC(AdvCityBusId)
@@ -279,7 +279,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95PassStation/CityBusApi_PassStation_GetRealTimeByFrequency",
+                    SwaggerOperationID = "CityBusApi_PassStation_GetRealTimeByFrequency",
                     URL = "{0}/v2/Bus/RealTimeByFrequency/City/{1}",
                     EnumID = 2720
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -291,7 +291,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95PassStation/CityBusApi_PassStation_RealTimeNearStop",
+                    SwaggerOperationID = "CityBusApi_PassStation_RealTimeNearStop",
                     URL = "{0}/v2/Bus/RealTimeNearStop/City/{1}",
                     EnumID = 2721
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -303,7 +303,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/CityBusApi95PassStation/CityBusApi_PassStation_EstimatedTimeOfArrival",
+                    SwaggerOperationID = "CityBusApi_PassStation_EstimatedTimeOfArrival",
                     URL = "{0}/v2/Bus/EstimatedTimeOfArrival/City/{1}",
                     EnumID = 2722
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -314,7 +314,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車行經站位路線資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95PassStation/CityBusApi_PassStation_Route",
+                    SwaggerOperationID = "CityBusApi_PassStation_Route",
                     URL = "{0}/v2/Bus/Route/City/{1}",
                     EnumID = 2723
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -325,7 +325,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車行經站位站牌資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95PassStation/CityBusApi_PassStation_Stop",
+                    SwaggerOperationID = "CityBusApi_PassStation_Stop",
                     URL = "{0}/v2/Bus/Stop/City/{1}",
                     EnumID = 2724
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -336,7 +336,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車行經站位路線站序資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95PassStation/CityBusApi_PassStation_StopOfRoute",
+                    SwaggerOperationID = "CityBusApi_PassStation_StopOfRoute",
                     URL = "{0}/v2/Bus/StopOfRoute/City/{1}",
                     EnumID = 2725
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -347,18 +347,18 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車行經站位班表資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95PassStation/CityBusApi_PassStation_Schedule",
+                    SwaggerOperationID = "CityBusApi_PassStation_Schedule",
                     URL = "{0}/v2/Bus/Schedule/City/{1}",
                     EnumID = 2726
                 }, Details = GetDetailsFromCities(AdvCityBusId)
             };
             yield return new ServiceData {
                 Service = new BaseService {
-                    FK_BaseDataType = BaseDataType.Shape,
+                    FK_BaseDataType = BaseDataType.Route,
                     NameZh_tw = "特定業者的市區公車行經站位線型資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.CityBus,
-                    SpecificationURL = "{0}#!/CityBusApi95PassStation/CityBusApi_PassStation_Shape",
+                    SwaggerOperationID = "CityBusApi_PassStation_Shape",
                     URL = "{0}/v2/Bus/Shape/City/{1}",
                     EnumID = 2727
                 }, Details = GetDetailsFromCities(AdvCityBusId)
@@ -375,7 +375,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_RealTimeByFrequency",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_RealTimeByFrequency",
                     URL = "{0}/v2/Bus/RealTimeByFrequency/InterCity",
                     EnumID = 2750
                 }, Detail = GetDetailFromTHB()
@@ -387,7 +387,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_RealTimeNearStop",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_RealTimeNearStop",
                     URL = "{0}/v2/Bus/RealTimeNearStop/InterCity",
                     EnumID = 2751
                 }, Detail = GetDetailFromTHB()
@@ -399,7 +399,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_EstimatedTimeOfArrival",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_EstimatedTimeOfArrival",
                     URL = "{0}/v2/Bus/EstimatedTimeOfArrival/InterCity",
                     EnumID = 2752
                 }, Detail = GetDetailFromTHB()
@@ -410,7 +410,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的公路客運路線資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_Route",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_Route",
                     URL = "{0}/v2/Bus/Route/InterCity",
                     EnumID = 2753
                 }, Detail = GetDetailFromTHB()
@@ -421,7 +421,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的公路客運站牌資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_Stop",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_Stop",
                     URL = "{0}/v2/Bus/Stop/InterCity",
                     EnumID = 2754
                 }, Detail = GetDetailFromTHB()
@@ -432,7 +432,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的市區公車站位資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_Station",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_Station",
                     URL = "{0}/v2/Bus/Station/InterCity",
                     EnumID = 2755
                 }, Detail = GetDetailFromTHB()
@@ -443,7 +443,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的公路客運路線站序資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_StopOfRoute",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_StopOfRoute",
                     URL = "{0}/v2/Bus/StopOfRoute/InterCity",
                     EnumID = 2756
                 }, Detail = GetDetailFromTHB()
@@ -454,7 +454,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的公路客運時刻表資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_Schedule",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_Schedule",
                     URL = "{0}/v2/Bus/Schedule/InterCity",
                     EnumID = 2757
                 }, Detail = GetDetailFromTHB()
@@ -465,7 +465,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定業者的公路客運路線票價資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95ByOperatorName/InterCityBusApi_ByOperatorName_RouteFare",
+                    SwaggerOperationID = "InterCityBusApi_ByOperatorName_RouteFare",
                     URL = "{0}/v2/Bus/RouteFare/InterCity",
                     EnumID = 2758
                 }, Detail = GetDetailFromTHB()
@@ -479,7 +479,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_RealTimeByFrequency",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_RealTimeByFrequency",
                     URL = "{0}/v2/Bus/RealTimeByFrequency/GeoCity/{1}",
                     EnumID = 2759
                 }, Details = GetDetailsForGeoCity()
@@ -491,7 +491,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_RealTimeNearStop",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_RealTimeNearStop",
                     URL = "{0}/v2/Bus/RealTimeNearStop/GeoCity/{1}",
                     EnumID = 2760
                 }, Details = GetDetailsForGeoCity()
@@ -503,7 +503,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_EstimatedTimeOfArrival",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_EstimatedTimeOfArrival",
                     URL = "{0}/v2/Bus/EstimatedTimeOfArrival/GeoCity/{1}",
                     EnumID = 2761
                 }, Details = GetDetailsForGeoCity()
@@ -514,7 +514,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定行政區域空間範圍內的公路客運路線資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_Route",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_Route",
                     URL = "{0}/v2/Bus/Route/GeoCity/{1}",
                     EnumID = 2762
                 }, Details = GetDetailsForGeoCity()
@@ -525,7 +525,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定行政區域空間範圍內的公路客運站牌資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_Stop",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_Stop",
                     URL = "{0}/v2/Bus/Stop/GeoCity/{1}",
                     EnumID = 2763
                 }, Details = GetDetailsForGeoCity()
@@ -536,7 +536,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定行政區域空間範圍內的公路客運站位資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_Station",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_Station",
                     URL = "{0}/v2/Bus/Station/GeoCity/{1}",
                     EnumID = 2764
                 }, Details = GetDetailsForGeoCity()
@@ -547,7 +547,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定行政區域空間範圍內的公路客運路線站序資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_StopOfRoute",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_StopOfRoute",
                     URL = "{0}/v2/Bus/StopOfRoute/GeoCity/{1}",
                     EnumID = 2765
                 }, Details = GetDetailsForGeoCity()
@@ -558,7 +558,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定行政區域空間範圍內的公路客運時刻表資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_Schedule",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_Schedule",
                     URL = "{0}/v2/Bus/Schedule/GeoCity/{1}",
                     EnumID = 2766
                 }, Details = GetDetailsForGeoCity()
@@ -569,7 +569,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定行政區域空間範圍內的公路客運路線票價資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassCity/InterCityBusApi_PassCity_RouteFare",
+                    SwaggerOperationID = "InterCityBusApi_PassCity_RouteFare",
                     URL = "{0}/v2/Bus/RouteFare/GeoCity/{1}",
                     EnumID = 2767
                 }, Details = GetDetailsForGeoCity()
@@ -583,7 +583,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_RealTimeByFrequency",
+                    SwaggerOperationID = "InterCityBusApi_PassStation_RealTimeByFrequency",
                     URL = "{0}/v2/Bus/RealTimeByFrequency/InterCity",
                     EnumID = 2768
                 }, Detail = GetDetailFromTHB()
@@ -595,7 +595,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_GetRealTimeNearStop",
+                    SwaggerOperationID = "InterCityBusApi_PassStation_GetRealTimeNearStop",
                     URL = "{0}/v2/Bus/RealTimeNearStop/InterCity",
                     EnumID = 2769
                 }, Detail = GetDetailFromTHB()
@@ -607,7 +607,7 @@ namespace Separation.ServiceValues {
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
                     IsLiveData = true,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_EstimatedTimeOfArrival",
+                    SwaggerOperationID = "InterCityBusApi_PassStation_EstimatedTimeOfArrival",
                     URL = "{0}/v2/Bus/EstimatedTimeOfArrival/InterCity",
                     EnumID = 2770
                 }, Detail = GetDetailFromTHB()
@@ -618,7 +618,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定站位的公路客運路線資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_Route",
+                    SwaggerOperationID = "InterCityBusApi_PassStation_Route",
                     URL = "{0}/v2/Bus/Route/InterCity",
                     EnumID = 2771
                 }, Detail = GetDetailFromTHB()
@@ -629,7 +629,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定站位的公路客運站牌資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_Stop",
+                    SwaggerOperationID = "InterCityBusApi_PassStation_Stop",
                     URL = "{0}/v2/Bus/Stop/InterCity",
                     EnumID = 2772
                 }, Detail = GetDetailFromTHB()
@@ -640,7 +640,7 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定站位的公路客運路線站序資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_StopOfRoute",
+                    SwaggerOperationID = "InterCityBusApi_PassStation_StopOfRoute",
                     URL = "{0}/v2/Bus/StopOfRoute/InterCity",
                     EnumID = 2773
                 }, Detail = GetDetailFromTHB()
@@ -651,18 +651,18 @@ namespace Separation.ServiceValues {
                     NameZh_tw = "特定站位的公路客運時刻表資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_Schedule",
+                    SwaggerOperationID = "InterCityBusApi_PassStation_Schedule",
                     URL = "{0}/v2/Bus/Schedule/InterCity",
                     EnumID = 2774
                 }, Detail = GetDetailFromTHB()
             };
             yield return new ServiceData {
                 Service = new BaseService {
-                    FK_BaseDataType = BaseDataType.Shape,
+                    FK_BaseDataType = BaseDataType.Route,
                     NameZh_tw = "特定站位的公路客運線型資料",
                     FK_BaseCategory = BaseCategory.Bus,
                     FK_BaseSubCategory = BaseSubCategory.InterCityBus,
-                    SpecificationURL = "{0}#!/InterCityBusApi95PassStation/InterCityBusApi_PassStation_Shape",
+                    SwaggerOperationID = "InterCityBusApi_PassStation_Shape",
                     URL = "{0}/v2/Bus/Shape/InterCity",
                     EnumID = 2775
                 }, Detail = GetDetailFromTHB()
