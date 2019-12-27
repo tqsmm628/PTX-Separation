@@ -6,17 +6,17 @@ using Separation.POCO;
 using Separation.Services;
 
 namespace Separation.ServiceValues {
-    public class TRADataVersionService {
+    public class THSRDataVersionService {
         #region helpers
         private static Func<string> IdGen(string format, int initial = 1)
             => () => string.Format(format, initial++);
 
-        private static Func<string> TRAId = IdGen("TRA_02{0:D3}", 16);
+        private static Func<string> THSRId = IdGen("THSR_02{0:D3}", 13);
 
-        private static BaseServiceDetail GetDetail_TRA()
+        private static BaseServiceDetail GetDetail_THSR()
             => new BaseServiceDetail {
-                ID = TRAId(),
-                FK_BaseAuthority = BaseAuthority.交通部臺灣鐵路管理局
+                ID = THSRId(),
+                FK_BaseAuthority = BaseAuthority.臺灣高速鐵路股份有限公司
             };
         #endregion
 
@@ -24,24 +24,24 @@ namespace Separation.ServiceValues {
             yield return new ServiceData {
                 Service = new BaseService {
                     FK_BaseDataType = BaseDataType.DataVersion,
-                    NameZh_tw = "臺鐵車次資料版本歷史資料",
+                    NameZh_tw = "高鐵車次資料版本歷史資料",
                     FK_BaseCategory = BaseCategory.Rail,
-                    FK_BaseSubCategory = BaseSubCategory.TRA,
-					SwaggerOperationID = "TRAApi_GeneralDataVersionAll",
-					URL = "v{Version}/Rail/TRA/GeneralDataVersion/All",
-                    EnumID = 2155
-                }, Detail = GetDetail_TRA()
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+					SwaggerOperationID = "THSRApi_GeneralDataVersionAll",
+					URL = "v{Version}/Rail/THSR/GeneralDataVersion/All",
+                    EnumID = 2133
+                }, Detail = GetDetail_THSR()
             };
             yield return new ServiceData {
                 Service = new BaseService {
                     FK_BaseDataType = BaseDataType.DataVersion,
-                    NameZh_tw = "臺鐵票價資料版本歷史資料",
+                    NameZh_tw = "高鐵票價資料版本歷史資料",
                     FK_BaseCategory = BaseCategory.Rail,
-                    FK_BaseSubCategory = BaseSubCategory.TRA,
-					SwaggerOperationID = "TRAApi_ODFareDataVersionAll",
-					URL = "v{Version}/Rail/TRA/ODFareDataVersion/All",
-                    EnumID = 2156
-                }, Detail = GetDetail_TRA()
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+					SwaggerOperationID = "THSRApi_ODFareDataVersionAll",
+					URL = "v{Version}/Rail/THSR/ODFareDataVersion/All",
+                    EnumID = 2134
+                }, Detail = GetDetail_THSR()
             };
         }
         public static IEnumerable<string> Insert() {

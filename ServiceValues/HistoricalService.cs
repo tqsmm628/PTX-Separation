@@ -559,10 +559,154 @@ namespace Separation.ServiceValues {
                     EnumID = 2442
                 }, Detail = GetDetail_TRA()
             };
+
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "高鐵定期資料版本資訊歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+                    SwaggerOperationID = "HistoricalTHSRApi_GeneralDataVersion",
+                    URL = "v{Version}/Historical/Rail/THSR/GeneralDataVersion/All",
+                    EnumID = 2443
+                }, Detail = GetDetail_THSR()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "高鐵定期資料版本資訊歷史資料(月)",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+                    SwaggerOperationID = "HistoricalTHSRApi_GeneralDataVersion_Month",
+                    URL = "v{Version}/Historical/Rail/THSR/GeneralDataVersion/YearMonth/{YearMonth}",
+                    EnumID = 2444
+                }, Detail = GetDetail_THSR()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "高鐵定期資料版本資訊歷史資料(日)",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+                    SwaggerOperationID = "HistoricalTHSRApi_GeneralDataVersion_Date",
+                    URL = "v{Version}/Historical/Rail/THSR/GeneralDataVersion/Date/{Date}",
+                    EnumID = 2445
+                }, Detail = GetDetail_THSR()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "高鐵票價資料版本資訊歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+                    SwaggerOperationID = "HistoricalTHSRApi_ODFareDataVersion",
+                    URL = "v{Version}/Historical/Rail/THSR/ODFareDataVersion/All",
+                    EnumID = 2446
+                }, Detail = GetDetail_THSR()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "高鐵票價資料版本資訊歷史資料(月)",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+                    SwaggerOperationID = "HistoricalTHSRApi_ODFareDataVersion_Month",
+                    URL = "v{Version}/Historical/Rail/THSR/ODFareDataVersion/YearMonth/{YearMonth}",
+                    EnumID = 2447
+                }, Detail = GetDetail_THSR()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "高鐵票價資料版本資訊歷史資料(日)",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+                    SwaggerOperationID = "HistoricalTHSRApi_ODFareDataVersion_Date",
+                    URL = "v{Version}/Historical/Rail/THSR/ODFareDataVersion/Date/{Date}",
+                    EnumID = 2448
+                }, Detail = GetDetail_THSR()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.Schedule,
+                    NameZh_tw = "高鐵定期時刻表歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+                    SwaggerOperationID = "HistoricalTHSRApi_GeneralTimetable",
+                    URL = "v{Version}/Historical/Rail/THSR/GeneralTimetable/v{DataVersion}",
+                    EnumID = 2449
+                }, Detail = GetDetail_THSR()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.Fare,
+                    NameZh_tw = "高鐵票價歷史資料",
+                    FK_BaseCategory = BaseCategory.Rail,
+                    FK_BaseSubCategory = BaseSubCategory.THSR,
+                    SwaggerOperationID = "HistoricalTHSRApi_ODFare",
+                    URL = "v{Version}/Historical/Rail/THSR/ODFare/v{DataVersion}",
+                    EnumID = 2450
+                }, Detail = GetDetail_THSR()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.DataVersion,
+                    NameZh_tw = "航空資料版本資訊歷史資料",
+                    FK_BaseCategory = BaseCategory.Air,
+                    SwaggerOperationID = "HistoricalAirApi_DataVersion",
+                    URL = "v{Version}/Historical/Air/DataVersion",
+                    EnumID = 2451
+                }, Detail = GetDetail_Air()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.Schedule,
+                    NameZh_tw = "航空國內定期時刻表歷史資料",
+                    FK_BaseCategory = BaseCategory.Air,
+                    SwaggerOperationID = "HistoricalAirApi_DomesticSchedule",
+                    URL = "v{Version}/Historical/Air/GeneralSchedule/v{DataVersion}/Domestic",
+                    EnumID = 2452
+                }, Detail = GetDetail_Air()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.Schedule,
+                    NameZh_tw = "航空國航定期時刻表歷史資料",
+                    FK_BaseCategory = BaseCategory.Air,
+                    SwaggerOperationID = "HistoricalAirApi_InternationalSchedule",
+                    URL = "v{Version}/Historical/Air/GeneralSchedule/v{DataVersion}/International",
+                    EnumID = 2453
+                }, Detail = GetDetail_Air()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.Stop,
+                    NameZh_tw = "公共自行車租借站位歷史資料",
+                    FK_BaseCategory = BaseCategory.Bike,
+					SwaggerOperationID = "HistoricalBikeApi_Station",
+                    ParamName = "City",
+					URL = "v{Version}/Historical/Bike/Station/{City}",
+                    EnumID = 2454,
+                    IsLiveData = true
+                }, Details = GetDetails_Bike()
+            };
+            yield return new ServiceData {
+                Service = new BaseService {
+                    FK_BaseDataType = BaseDataType.AvailableSeatStatus,
+                    NameZh_tw = "公共自行車即時車位歷史資料",
+                    FK_BaseCategory = BaseCategory.Bike,
+					SwaggerOperationID = "HistoricalBikeApi_Availability",
+                    ParamName = "City",
+					URL = "v{Version}/Historical/Bike/Availability/{City}",
+                    EnumID = 2455,
+                    IsLiveData = true
+                }, Details = GetDetails_Bike()
+            };
             #endregion
         }
         public static IEnumerable<string> Insert() {
-            foreach (var item in GenerateData().ToList().Where(x => 2434 <= x.Service.EnumID && x.Service.EnumID <= 2442)) {
+            foreach (var item in GenerateData().ToList()
+                .Where(x => 2454 <= x.Service.EnumID && x.Service.EnumID <= 2455)) {
                 item.Service.PK_BaseService = Guid.NewGuid();
                 item.Service.Version = 2;
                 item.Service.IsHistoricalData = true;

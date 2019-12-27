@@ -10,8 +10,7 @@ namespace Separation
             Dump("insert", HistoricalService.Insert());
         }
 
-        private static void Dump(string filename, IEnumerable<string> msg) => File.WriteAllText(
-            $"Output/{filename}.sql",
-            string.Join(Environment.NewLine, msg));
+        private static void Dump(string filename, IEnumerable<string> msg) => 
+            File.WriteAllText($"Output/{filename}.sql", string.Join(Environment.NewLine, msg));
     }
 }
